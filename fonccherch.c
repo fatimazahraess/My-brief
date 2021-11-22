@@ -76,4 +76,20 @@ void Addcompte(client cl[],int n){
         tableindex++;
     }
     }
+void cherch (client cl[],int tbidx,char cin){
+    int choix2=0;
+    for(int i=0;i<tbidx;i++){
+        for(strcasecmp(&c[i].cin,&cin)){
+            long int retr=0;
+            long int depo=0;
+            printf("\n le client avec le cin %s est :",cin);
+            printf("\n cin:%s|Nom: %s|Prenom:%s|Montant:%ld \n\",cl[i].cin,cl[i].nom,cl[i].prenom,cl[i].montant);
+            Menu2;
+            printf("\n\n");
+            printf("***operations***");
+            printf("\n\n Retrait [1]\t\t\Depot[2]\t\t\Retourner au menu principal[3]\n");
+        }
+
+    }
+}
 
