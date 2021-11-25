@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+
+
 
 typedef struct client client;
     struct client{
@@ -10,9 +14,18 @@ typedef struct client client;
     };
 
     int tableindex=0;
+void addcompte(client cl[], int n);
+void cherchcl(client cl[], int tbidx,char CIN[10]);
+void retrait(client cl[], int index, long int retrait);
+void depot(client cl[], int index, long int depot);
+void tridec(client cl[], int SIZE);
+void tric(client cl[], int SIZE);
+void fedilisation(client cl[], int SIZE);
+void savecl(client cl[], int Size);
 
 int main()
 {
+    system("cls");
     int choise,nbajout,choixtri, choixquit;
     char cinre[10], cin[10];
     client cl[1000];
@@ -25,12 +38,12 @@ int main()
     printf("\t\t\t           FATIMZAHRA ESSSAHI \n");
     printf("\t\t\t***\n");
     printf("\t\t\t\t\tMENU\n\n\n");
-    printf("\t\t\t\ 1-Ajouter un compte  \n");
-    printf("\t\t\t\ 2-Ajouter plusieurs compte \n");
-    printf("\t\t\t\ 3-Chercher un compte \n");
-    printf("\t\t\t\ 4-Trier por ordre \n");
-    printf("\t\t\t\ 5-Fidelisation \n");
-    printf("\t\t\t\ 6-Quitter l'application \n");
+    printf("\t\t\t\t 1-Ajouter un compte  \n");
+    printf("\t\t\t\t 2-Ajouter plusieurs compte \n");
+    printf("\t\t\t\t 3-Chercher un compte \n");
+    printf("\t\t\t\t 4-Trier por ordre \n");
+    printf("\t\t\t\t 5-Fidelisation \n");
+    printf("\t\t\t\t 6-Quitter l'application \n");
     printf("\t\t\t***\n\n\n");
 
 
@@ -64,7 +77,7 @@ int main()
 
 
 
-        printf("affichage les éléments du tableau\n\n");
+        printf("affichage les ï¿½lï¿½ments du tableau\n\n");
 
         showcl(cl, tableindex);
 
@@ -77,13 +90,13 @@ int main()
         case 1:
             tridec(cl, tableindex);
             printf("\n\n");
-            printf("affichage les éléments du tableau en order descroissant\n\n");
+            printf("affichage les ï¿½lï¿½ments du tableau en order descroissant\n\n");
             showcl(cl, tableindex);
             break;
         case 2:
             tric(cl, tableindex);
             printf("\n\n");
-            printf("affichage les éléments du tableau en order croissant\n\n");
+            printf("affichage les ï¿½lï¿½ments du tableau en order croissant\n\n");
             showcl(cl, tableindex);
             break;
         default:
@@ -220,7 +233,7 @@ void tridec(client cl[], int SIZE)
     {
         for (j=0 ; j < SIZE-i-1; j++)
         {
-            /* Pour un ordre décroissant utiliser < */
+            /* Pour un ordre dï¿½croissant utiliser < */
             if (cl[j].montant < cl[j+1].montant)
             {
                 tmp[0] = cl[j];
